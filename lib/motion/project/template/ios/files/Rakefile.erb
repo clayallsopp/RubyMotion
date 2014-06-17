@@ -4,7 +4,10 @@ require 'motion/project/template/ios'
 
 begin
   require 'bundler'
-  Bundler.require
+  begin
+    Bundler.require
+  rescue Bundler::GemfileNotFound
+  end
 rescue LoadError
 end
 
